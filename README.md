@@ -28,8 +28,13 @@ GSR，全称GitSynchronous，是一个本地文件自动同步到Git仓库的Pyt
   }
 ```
 4.保存配置文件
-
 5.运行`gitsynchronous.exe`
+
+## Bug反馈
+[议题](https://github.com/ning0818/GSR/issues)
+
+## 拉取请求
+[拉取请求](https://github.com/ning0818/GSR/pulls)
 
 ## 鸣谢
 - [@Fgaoxing](https://github.com/fgaoxing)
