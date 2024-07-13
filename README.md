@@ -36,5 +36,8 @@ GSR，全称GitSynchronous，是一个本地文件自动同步到Git仓库的Pyt
 ## 拉取请求
 [拉取请求](https://github.com/ning0818/GSR/pulls)
 
+## 社区讨论
+[社区讨论](https://github.com/ning0818/GSR/discussions)
+
 ## 鸣谢
 - [@Fgaoxing](https://github.com/fgaoxing)
