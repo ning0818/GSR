@@ -14,6 +14,7 @@ GSR，全称GitSynchronous，是一个本地文件自动同步到Git仓库的Pyt
 
 ## 使用教程
 1.从Release页面下载对应系统版本所需的程序，解压到任意文件夹
+
 2.修改`config.json`,注释如下表所示：
 ```
 {  
@@ -27,6 +28,7 @@ GSR，全称GitSynchronous，是一个本地文件自动同步到Git仓库的Pyt
   }
 ```
 4.保存配置文件
+
 5.运行`gitsynchronous.exe`
 
 ## 鸣谢
