@@ -9,7 +9,7 @@ GSR，全称GitSynchronous，是一个本地文件自动同步到Git仓库的Pyt
 - [ ] 使用计数器，限制线程数，避免过高的内存占用
 
 ## 开箱即用
-[Release Page 下载页](https://github.com/Oning0818/GSR/releases)
+[Release Page 下载页](https://github.com/ning0818/GSR/releases)
 
 ## 鸣谢
 - [@Fgaoxing](https://github.com/fgaoxing)
