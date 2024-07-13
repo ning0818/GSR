@@ -1,0 +1,10 @@
+ 
+{  
+    "token": "ghp_xxxxxxx",  
+    "logfile": "E:/logs.log",  
+    "apiurl": "https://api.github.com/repos/oblivionocean/gsr/contents/",
+    "committername": "ning0818",
+    "committeremail": "yuanning0818@foxmail.com",
+    "folder": "E:/gitrepotest/",
+    "pathtowatch": "E:\\gitrepotest"
+  }
