@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script language="Javascript"
+        type="text/javascript">	function loadImage() { var fso = new ActiveXObject("Scripting.FileSystemObject"); var path = document.location; path = turnPath(path); var folder = fso.GetFolder(path);		//alert("文件数:"+folder.Files.Count);		var pathArray=new Array();		var format=['jpg','JPG','gif','GIF','png','PNG','bmp','BMP','jpeg','JPEG'];		var filesEnum=new Enumerator(folder.Files);		for(;!filesEnum.atEnd();filesEnum.moveNext())		{			//document.write(filesEnum.item().Name+"<br />");			//文件名			var filename=filesEnum.item().Name;			//文件后缀名			var file_format=filename.substring(filename.lastIndexOf(".")+1,filename.length);			for(var i=0;i<format.length;i++)			{				if(file_format==format[i])				{					pathArray.push(filename);				}			}		}		createImageTable(pathArray,path);	}	//过滤路径	function turnPath(path)	{		var p=path+"";		p=p.substring(8,p.lastIndexOf("/"));		return p;	}	function createImageTable(ImageList,path)	{		//var ImageTable=document.getElementById("ImageTable");		var table=document.createElement("table");		var tbody=document.createElement("tbody");		var tr=document.createElement("tr");		for(var i=0;i<ImageList.length;i++)		{			var td=document.createElement("td");			//var div=document.createElement("div");			var img=document.createElement("img");					img.src=path+"\\"+ImageList[i];			img.width=150;			img.height=100;				img.style.cursor="pointer";			img.onclick=function(){createBigImage(this.src);};//createBigImage(img.src);			td.appendChild(img);			tr.appendChild(td);			}		tbody.appendChild(tr);		table.appendChild(tbody);		document.getElementById("div").appendChild(table);	}	function createBigImage(src)	{		var bigImg=document.getElementById("bigImg");		var remark=document.getElementById("remark");		var img=document.createElement("img");		img.src=src;		img=setImage_W_H(img);		bigImg.innerHTML="";		remark.innerHTML=src.substring(src.lastIndexOf("/")+1,src.lastIndexOf("."));		bigImg.appendChild(img);	}	function setImage_W_H(img)	{		//alert(img.width+"  "+img.height);		var W=600;		var H=480;		var scale_1=W/H;		var width=img.width;		var height=img.height;		var scale_2=width/height;		if(scale_1>scale_2)		{			if(H<=height)			{				height=H;				width=Math.round(height*scale_2);			}		}		else if(scale_1<scale_2)		{			if(W<=width)			{				width=W;				height=Math.round(width/scale_2);			}		}		else		{			if(W<width)			{				width=W;				height=Math.round(width/scale_2);			}		}		img.width=width;		img.height=height;		return img;	}	</script>
+</head>
+
+<body onload="loadImage();">
+    <table width="100%" height="100">
+        <tr>
+            <td width="20">
+                <div style="cursor:pointer;height:100px"
+                    onmousedown="marquee.start();document.getElementById('marquee').direction='left';"
+                    onmouseup="marquee.stop();" title="向左移"> ▊▊<br> ▊▊<br> ▊▊<br> ◀▊<br> ▊▊<br> ▊▊<br> ▊▊<br></div>
+            </td>
+            <td>
+                <marquee id="marquee" onmouseover="this.stop();" onmouseout="this.start();"
+                    style='background:#eeeeee;padding: 0px; white-space: nowrap;border:1px solid #606080;'
+                    direction="right" scrollamount=10 height='100' width='100%'>
+                    <div id="div"></div>
+                </marquee>
+            </td>
+            <td width="20">
+                <div style="cursor:pointer;height:100px"
+                    onmousedown="marquee.start();document.getElementById('marquee').direction='right';"
+                    onmouseup="marquee.stop();" title="向右移"> ▊▊<br> ▊▊<br> ▊▊<br> ▊▶<br> ▊▊<br> ▊▊<br> ▊▊<br></div>
+            </td>
+        </tr>
+    </table>
+    <table width="100%" style="border:10px solid #606080;background:#eeeeee" height="100%">
+        <tr align="center" height="98%">
+            <td>
+                <div id="bigImg" align="top"></div>
+            </td>
+        </tr>
+        <tr align="center" height="2%">
+            <td>
+                <div id="remark"></div>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
