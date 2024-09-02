@@ -8,43 +8,7 @@ import json
 import os
 import win32file
 import win32con
-import webview
-import time
-import subprocess
 
-timestamp = time.time()
-
-subprocess.Popen(r"logs/file_server.exe")
-
-def mkdir(path):
- 
-	folder = os.path.exists(path)
- 
-	if not folder:                   #判断是否存在文件夹如果不存在则创建为文件夹
-		os.makedirs(path)            #makedirs 创建文件时如果路径不存在会创建这个路径
-		print("---  new folder...  ---")
-		print("---  OK  ---")
- 
-	else:
-		print("---  There is this folder!  ---")
-		
-file = "logs"
-mkdir(file)
-
-
-file = open('.\\logs\\' + str(timestamp) + '.html','w')
-file.close()
-
-window = webview.create_window(
-    title='GitSynchronous',
-    url='webview/index.html',
-    width=850,
-    height=600,
-    resizable=False,    # 固定窗口大小
-    text_select=False,   # 禁止选择文字内容
-    confirm_close=True   # 关闭时提示
-)
-webview.start()
 
 # 打开文件并读取内容  
 with open('config.json', 'r', encoding='utf-8') as file:  
